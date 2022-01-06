@@ -1,7 +1,16 @@
+import { useEffect, useState } from "react";
+import GifGridItem from "./GifGridItem";
+
 const GifGrid = ({ category }) => {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    getGifs();
+  }, []);
+
   const getGifs = async () => {
     const url =
-      "https://api.giphy.com/v1/gifs/search?api_key=Jqf5dQm5O68ILNtxqqFHkIcq7wyLmNRH&q=superman&limit=10";
+      "https://api.giphy.com/v1/gifs/search?api_key=Jqf5dQm5O68ILNtxqqFHkIcq7wyLmNRH&q=car&limit=10";
 
     const resp = await fetch(url);
 
@@ -15,14 +24,17 @@ const GifGrid = ({ category }) => {
       };
     });
 
-    console.log(gifs);
+    setImages(gifs);
   };
-
-  getGifs();
 
   return (
     <div>
       <h1>{category}</h1>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        {images.map((img) => (
+          <GifGridItem key={img.id} {...img} />
+        ))}
+      </div>
     </div>
   );
 };
