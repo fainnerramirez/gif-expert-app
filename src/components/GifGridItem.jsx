@@ -2,7 +2,7 @@ import React from "react";
 
 const GifGridItem = ({ title, url }) => {
   return (
-    <div className="col">
+    <div className="col animate__animated animate__fadeInUp">
       <div className="card" style={{ width: "18rem" }}>
         <img src={url} className="card-img-top" alt={title} />
         <div className="card-body">
