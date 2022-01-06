@@ -1,5 +1,5 @@
 import { shallow } from "enzyme";
-import GifGridItem from "../components/GifGridItem";
+import GifGridItem from "../../components/GifGridItem";
 
 describe("Pruebas en el archivo gifGridItem.js", () => {
   const title = "Title example";
@@ -11,13 +11,10 @@ describe("Pruebas en el archivo gifGridItem.js", () => {
   });
 
   test("El componente debe tener los atributos obligatorios", () => {
-    const view = shallow(<GifGridItem title={title} url={url} />);
-
     expect(view).toMatchSnapshot();
   });
 
   test("debe de tener un pàrrafo con el tìtulo", () => {
-    const view = shallow(<GifGridItem title={title} url={url} />);
     const parrafoTitulo = view.find("h5");
     const text = parrafoTitulo.text().trim();
 
@@ -25,8 +22,6 @@ describe("Pruebas en el archivo gifGridItem.js", () => {
   });
 
   test("Debe de mostrar la url y el alt props de la etiqueta img", () => {
-    const view = shallow(<GifGridItem title={title} url={url} />);
-
     const img = view.find("img");
 
     const alt = img.props().alt;
@@ -34,5 +29,13 @@ describe("Pruebas en el archivo gifGridItem.js", () => {
 
     expect(alt).toBe(title);
     expect(src).toBe(url);
+  });
+
+  test("Debe de tener la clase animate__fadeInUp", () => {
+    const div = view.find("div").at(0);
+
+    const className = div.props().className;
+
+    expect(className.includes("animate__fadeInUp")).toBe(true);
   });
 });
