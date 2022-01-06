@@ -1,13 +1,10 @@
 import "../App.css";
 import AddCategory from "./AddCategory";
 import { useState } from "react";
+import GifGrid from "./GifGrid";
 
 const GifApp = () => {
-  const [categorys, setCategory] = useState([
-    "one category",
-    "two category",
-    "two category",
-  ]);
+  const [categorys, setCategory] = useState([]);
 
   return (
     <div className="App">
@@ -15,11 +12,11 @@ const GifApp = () => {
       <AddCategory setCategory={setCategory} />
       <hr />
       <div>
-        <ol>
+        <>
           {categorys.map((category, i) => {
-            return <li key={i}>{category}</li>;
+            return <GifGrid key={category} category={category} />;
           })}
-        </ol>
+        </>
       </div>
     </div>
   );
