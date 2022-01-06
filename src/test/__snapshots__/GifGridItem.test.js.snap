@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Pruebas en el archivo gifGridItem.js El componente debe tener los atributos obligatorios 1`] = `
+<div
+  className="col animate__animated animate__fadeInUp"
+>
+  <div
+    className="card"
+    style={
+      Object {
+        "width": "18rem",
+      }
+    }
+  >
+    <img
+      alt="Title example"
+      className="card-img-top"
+      src="http://localhost/image.png"
+    />
+    <div
+      className="card-body"
+    >
+      <h5
+        className="card-title"
+      >
+        Title example
+      </h5>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Pruebas en el archivo gifGridItem.js Se debe mostrar el componente correctamente 1`] = `
 <div
   className="col animate__animated animate__fadeInUp"
@@ -13,14 +43,18 @@ exports[`Pruebas en el archivo gifGridItem.js Se debe mostrar el componente corr
     }
   >
     <img
+      alt="Title example"
       className="card-img-top"
+      src="http://localhost/image.png"
     />
     <div
       className="card-body"
     >
       <h5
         className="card-title"
-      />
+      >
+        Title example
+      </h5>
     </div>
   </div>
 </div>
