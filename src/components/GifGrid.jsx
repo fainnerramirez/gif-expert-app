@@ -7,6 +7,7 @@ const GifGrid = ({ category }) => {
   return (
     <div className="container">
       <h1 className="p-2 text-warning">{category}</h1>
+      <hr />
       {loading && (
         <h4 className="p-2 text-center animate__animated animate__heartBeat animate__infinite infinite">
           Cargando...
