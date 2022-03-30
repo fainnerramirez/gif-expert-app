@@ -8,12 +8,18 @@ const GifApp = () => {
 
   return (
     <div className="App">
-      <h1>Gif App</h1>
+      <div className="row p-5">
+        <h1 className="text-center animate__animated animate__backInDown">
+          Gif App
+        </h1>
+      </div>
       <AddCategory setCategory={setCategory} />
       <hr />
       <div>
         {categorys.length === 0 ? (
-          <h3 className="text-center p-5">Busca cuaquier cosa</h3>
+          <h3 className="text-center p-5 animate__animated animate__pulse animate__infinite infinite">
+            Busca cuaquier cosa
+          </h3>
         ) : (
           <>
             {categorys.map((category, i) => {
